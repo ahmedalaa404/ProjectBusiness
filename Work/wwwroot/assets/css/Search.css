@@ -1,0 +1,117 @@
+:root
+{
+    --main-color-purble:#333456;
+    --main-color-yellow:#C59035;
+}
+
+nav
+{
+   position: static;
+}
+.btn-bg-main:hover
+{
+    color: white;
+}
+.btn-border-yellow
+{
+    border: 1px solid var(--main-color-yellow) ;
+}
+.btn-view-profile a:hover
+{
+    color: var(--main-color-yellow) !important;
+   
+}
+.buttonsServicesOrView button
+{
+    margin-left:20px !important ;
+    box-shadow: 0px 5px 12px -10px black
+
+}
+
+.btn-bg-main
+{
+    color: white;
+    padding: 10px 35px;
+}
+
+
+.img-persone 
+{
+    width: 20% !important;
+    padding:10px;
+
+
+}
+
+.img-persone  .framImg
+{
+    width: 300px !important;
+    overflow: hidden;
+
+    box-shadow:3px 5px 12px -10px black;
+
+}
+
+
+
+.img-persone img
+{
+width: 147px;
+    height: 150px;
+    border-radius: 20px;
+
+}
+
+@media screen and (min-width:0px) and (max-width:950px)
+{
+
+    .filteration
+    {
+        flex-direction: column;
+    }
+         .ResulateCountFilter
+         {
+            justify-content: space-between;
+         }
+            .ResulateCountFilter p 
+            {
+                margin: 0 !important;
+            }
+        .desc-persone
+        {
+            text-align: center;
+            padding-top:10px ;
+        }
+        .buttonsServicesOrView
+        {
+            flex-direction: column;
+        }
+        .buttonsServicesOrView button
+        {
+            margin: 10px 0;
+
+        }
+        .Rating
+        {
+            height: auto !important;
+            padding: 0 !important;
+            justify-content: center !important; 
+        }
+            .img-persone 
+            {
+                width: 100%  !important;
+            }
+ 
+}
+
+
+@media screen and (min-width:951px)
+{
+        .desc-persone
+        {
+            text-align: start !important;
+            padding-top:0px ;
+        }
+}
+
+

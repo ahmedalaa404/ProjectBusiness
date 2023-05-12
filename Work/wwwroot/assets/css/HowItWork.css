@@ -1,0 +1,68 @@
+.layer
+{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+nav
+{
+    position: fixed !important;
+}
+.layer::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../images/student.jpg");
+    opacity: 0.1;
+    z-index: -1;
+    background-position: 100%;
+    background-size: cover;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 950px)
+{
+    .WithGradbest
+    {
+      width: 100% !important;   
+    }
+}
+    
+
+
+@media screen and (min-width:0px) and (max-width:600px)
+{
+    .layer
+    {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+}
+
+/* add in file css */ 
+.container h3
+{
+    transform: translateY(50%);
+}
+
+.WithGradbest h4
+{
+    font-weight: 600;
+}
+
+.WithGradbest p
+{
+    font-weight: 300;
+    font-size: 14px !important;
+}
+.container>h3
+{
+    color: #333456 ;
+}

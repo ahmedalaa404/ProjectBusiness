@@ -1,0 +1,133 @@
+:root {
+    --main-color-purble: #333456;
+    --main-color-yellow: #C59035;
+}
+
+
+
+.navbar a
+{
+    color:var(--main-color-purble) !important;
+}
+
+.navLink
+{
+    position: relative !important;
+    color: #000 !important;
+
+}
+.active:not(.nav-link.dropdown-toggle)
+{
+    margin-top:1px ;
+    border-bottom: 2px solid var(--main-color-yellow);
+}
+
+
+
+
+.navLink:not(.active)::after
+{
+    content: "";
+    position: absolute !important;
+    left:0px ;
+    bottom: 0px;
+    width: 0;
+    height: 2px;
+    background-color: var(--main-color-yellow);
+    transition: 0.5s 0.2s width; 
+}
+.navLink:hover::after
+{
+    width: 100%;
+
+}
+
+
+.ProfilePhoto
+{
+    width: 50px !important; 
+    height: 50px !important; 
+
+    border-radius: 50% !important;
+
+}
+.nav-link.dropdown-toggle.show
+{
+    text-align: center !important;
+
+}
+@media screen and (max-width:991px)
+{
+.dropdown-menu.show
+{
+
+    transform: translateX(5%) !important;
+}
+    
+}
+
+@media screen and (min-width:991px) {
+    .dropdown-menu.show
+{
+    transform: translateX(-60%) !important;
+    width: 44% !important;
+}
+}
+
+.navbar-toggler 
+{
+    box-shadow: none !important;
+}
+nav
+{
+    z-index: 9999 !important;
+}
+.nav-link::after
+{
+background-color: transparent;
+position: relative;
+}
+
+.dropdown-item.active, .dropdown-item:active 
+{
+    background-color:var(--main-color-yellow) !important;
+
+}
+
+
+@media screen and (min-width:0) and (max-width:991px)
+{
+
+
+    ul.navbar-nav.ms-auto.mb-2.mb-lg-0.align-items-center
+{
+    background-color:var(--main-color-yellow)!important;
+    border-radius: 32px;
+}
+
+
+.navbar a {
+    color: white !important;
+    text-align: center !important;
+    }
+
+    .navbar a:hover,.active   , a.dropdown-item
+    {
+    color: var(--main-color-purble)!important;
+    border-radius: 40px;
+    }
+    .dropdown-menu.show
+    {
+        border-radius: 32PX;
+    }
+  
+    
+
+}
+
+.navbar-toggler i
+{
+    color: var(--main-color-purble)!important;
+    font-size: 2rem;
+
+}

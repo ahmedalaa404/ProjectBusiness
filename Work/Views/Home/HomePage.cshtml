@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Work.DAL.Extend;
+
+@inject SignInManager<ApplicationUser> signInManager
+@inject UserManager<ApplicationUser> userManager
+
+@{
+    ViewData["Title"] = "Home";
+    var UserId = userManager.GetUserId(User);
+}
+
+@section css{
+
+    <link rel="stylesheet" href="~/assets/css/userHomePageAll.css">
+    <link rel="stylesheet" href="~/assets/css/SharedFile.css">
+
+
+}
+
+<div class="LayerPageHome">
+    <div class="container">
+        <div class="w-100 vh-100 d-flex align-items-center justify-content-center">
+            <div>
+                <h3 class="translate-middle-y ProjectFucture">Your Project is Your Future </h3><div class="">
+
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Student"))
+                    {
+                        <div class="text-center mt-4">
+                            <a asp-controller="Student" asp-action="CreatePost"><button class="btn-bg-main btn " style="font-weight: 500;">Add Inquery <i class="fa-solid fa-plus fa-beat fa-lg mx-1"></i></button></a>
+                        </div>
+
+                    }
+
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Graduate"))
+                    {
+                        <div class="text-center mt-4">
+                            <a asp-controller="Graduate" asp-action="CreateProject"><button class="btn-bg-main btn "style="font-weight: 500;">Add Project <i class="fa-solid fa-plus fa-beat fa-lg mx-1"></i></button></a>
+                        </div>
+                    }
+
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Specialist"))
+                    {
+                        <div class="text-center mt-4">
+                            <a asp-controller="Specialist" asp-action="ShowPosts"><button class="btn-bg-main btn " style="font-weight: 500;">Reply Inquery <i class="fa-solid fa-plus fa-beat fa-lg mx-1"></i></button></a>
+                        </div>
+                    }
+
+                    @if (signInManager.IsSignedIn(User) && User.IsInRole("Investor"))
+                    {
+                        <div class="text-center mt-4">
+                            <a asp-controller="Investor" asp-action="BuyProject"><button class="btn-bg-main btn " style="font-weight: 500;">Buy Project <i class="fa-solid fa-plus fa-beat fa-lg mx-1"></i></button></a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section js {
+
+}

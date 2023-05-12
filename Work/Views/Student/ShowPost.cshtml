@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using Work.DAL.Extend;
+
+@model Work.BL.Models.PostVM
+
+@inject UserManager<ApplicationUser> userManager
+@inject Work.BL.Interface.IPostRep PostRep;
+@inject Work.BL.Interface.IReplyRep ReplyRep;
+
+@{
+    ViewData["Title"] = "Post";
+    var UserId = userManager.GetUserId(User);
+    var PostId = ViewBag.PostId;
+}
+
+@section css
+    
+{
+    <link rel="stylesheet" href="~/assets/css/ShowPosts.css">
+    <link rel="stylesheet" href="~/assets/css/InqueryReplaySpecialiest.css">
+    <link rel="stylesheet" href="~/assets/css/ReplyInThePost.css">
+
+}
+
+
+<div class="container ContainerPostandComment">
+    <div class="post p-4 position-relative  bg-main-yellow border-radius-32">
+        <div class="DataPersone position-absolute d-flex">
+            @foreach (var user in userManager.Users.Where(a => a.Id == Model.UserId))
+            {
+                @if (user.PicName != null)
+                {
+                    <img src="~/Files/ProfilesPictures/@user.PicName" width="50px" class="rounded-circle">
+                }
+                @if (user.PicName == null)
+                {
+                    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" width="50px" class="rounded-circle">
+                }
+                <h5 class="namePersonOfPost">@user.FirstName @user.LastName</h5>
+            }
+        </div>
+        <div class="Post-description text-center m-auto">
+            <p class="text-white post-desc">
+                @Model.Content
+            </p>
+        </div>
+
+        <form asp-controller="Specialist" asp-action="AddReply">
+            <div class="inputes-chat-and-sendReplay text-end">
+                <div class="w-100 d-flex justify-content-center">
+                    <div class="input-group my-3">
+                        <input type="hidden" class="form-control" name="UserId" value="@UserId">
+                        <input type="hidden" class="form-control" name="PId" value="@Model.Id">
+                        <input type="hidden" class="form-control" name="UserEmail" value="@User.Identity.Name">
+                        
+                        <input class="btn text-white btn-Send-Replay mx-2 border-radius-32" type="submit" id="button-addonReplay" type="submit" value="Send Replay">
+                        <input type="text" class="form-control " name="Content" placeholder="Add Comment ..." aria-label="Example text with button addon" aria-describedby="button-addon1" id="InputeComment">
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div>
+                            <button class="btn  text-white mx-2 border-radius-32 py-2" type="button" id="button-Chat" hidden><a class="text-white text-decoration-none " href="chat.html">Chat</a></button>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    <!-- first Commemt -->
+    <div class="comment-section border-radius-32 p-2 mt-2">
+        <div class="container">
+            <div class="review">
+                <h2 class="text-main-yellow">Comments</h2>
+                <div id="comment-Sectiom">
+                    @foreach (var reply in ReplyRep.Get().Where(a => a.PId == PostId))
+                    {
+                        @foreach (var user in userManager.Users.Where(a => a.Id == reply.UserId))
+                        {
+                            <div class="media media-review">
+                                <div class="media-user">
+                                    @if (user.PicName != null)
+                                    {
+                                        <img src="~/Files/ProfilesPictures/@user.PicName" width="50px" class="rounded-circle">
+                                    }
+                                    @if (user.PicName == null)
+                                    {
+                                        <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/138926-200.png" width="50px" class="rounded-circle">
+                                    }
+                                </div>
+                                <div class="media-body">
+                                    <div class="M-flex">
+                                        <h2 class="title"><span> @user.FirstName @user.LastName </span>@reply.CreatedAt</h2>
+                                    </div>
+                                    <div class="description ps-2">
+                                        @reply.Content
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section js
+{
+    @*<script src="~/assets/js/ReplayComment.js"></script>*@
+}

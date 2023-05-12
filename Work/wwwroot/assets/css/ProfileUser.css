@@ -1,0 +1,197 @@
+:root {
+    --main-color-purble: #333456;
+    --main-color-yellow: #C59035;
+}
+
+
+
+.btn-bg-main 
+{
+    padding: 10px 35px;
+}
+.profile-badge{
+    border:1px solid #c1c1c1;
+    padding:5px;
+    position: relative;
+}
+
+.user-detail{
+    background-color: #fff;
+    position: relative;
+    padding:115px 0px 10px 0px;
+    color:#8B8B89;
+}
+.user-detail h3{
+    margin: 0px;
+    margin:0px 0px 5px 0px;
+    color: #000;
+}
+.user-detail p{
+    font-size:14px;
+}
+.user-detail .btn{
+    margin-bottom:10px;
+    background-color: #fff;
+    border:1px solid #DEDEDE;
+    border-radius: 0px;
+    color:black;
+}
+
+.ChatBtn
+{
+    bottom: 20px;
+    left: 25px;
+    width: 70px;
+    height: 70px;
+    background: #C33764;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #1D2671, #D35B4D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #1D2671, #D35B4D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border-radius: 50%;
+    cursor: pointer;
+}
+.ChatBtn i
+{
+    color: white !important;
+}   
+
+.alertNotification
+{
+    top:-20px;
+    right:-5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.avatar-upload {
+    position: relative;
+    max-width: 205px;
+    margin: 10px auto;
+}
+.avatar-upload .avatar-edit {
+    position: absolute;
+    right: 12px;
+    z-index: 1;
+    top: 10px;
+}
+.avatar-upload .avatar-edit input {
+    display: none;
+}
+.avatar-upload .avatar-edit input + label {
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 0;
+    border-radius: 100%;
+    background: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.12);
+    cursor: pointer;
+    font-weight: normal;
+    transition: all .2s ease-in-out;
+}
+.avatar-upload .avatar-edit input + label:hover {
+    background: #f1f1f1;
+    border-color: #d6d6d6;
+}
+.avatar-upload .avatar-edit input + label:after {
+    content: "\f040";
+    font-family: 'FontAwesome';
+    color: #757575;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
+.avatar-upload .avatar-preview {
+    width: 192px;
+    height: 192px;
+    position: relative;
+    border-radius: 100%;
+    border: 6px solid #F8F8F8;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.1);
+}
+.avatar-upload .avatar-preview > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*  */
+@media screen and (max-width:750px)
+{
+    .btns-AddQ-ShowProject button
+        {
+            margin: 10px;
+        }
+}
+
+
+/* Edite Of navbar  and small Screen */
+
+@media screen and (max-width:991px) 
+{
+    .dropdown-menu  a
+    {
+        color: var(--main-color-purble) !important;
+    }
+}
+
+
+
+
+/* Notifications */
+.Notifications
+{
+    bottom: 20px;
+    right: 50px;
+}
+
+.modal-content
+{
+    border-radius: 1rem;
+    text-align: center;
+}
+
+
+.modal-content:hover{
+    box-shadow: 2px 2px 2px black;
+}
+
+.fa{
+    color: #2b84be;
+    font-size:90px;
+    padding: 30px 0px;
+}
+
+.b1{
+    background-color:#198754;
+    font-size: 17px;
+}
+
+.r3{
+    color: #c1c1c1;
+    font-weight: 500;
+}
+
+a, a:hover{
+    text-decoration: none;
+}
+/*  */
